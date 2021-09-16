@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="elementnumber"
+            type="String" />
+        <variable
+            name="elementshortname"
+            type="String" />
+        <variable
+            name="elementlongname"
+            type="String" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materalcard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:strokeWidth="1dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/linear_layout_item"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+        <TextView
+            android:id="@+id/text_elemetNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="@{elementnumber}"></TextView>
+
+        <TextView
+            android:id="@+id/text_elemetShortName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="@{elementshortname}"></TextView>
+
+        <TextView
+            android:id="@+id/text_elemetLongName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:text="@{elementlongname}"></TextView>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

@@ -1,11 +1,13 @@
-package com.example.periodictableapp
+package com.example.periodictableapp.adapter
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.example.periodictableapp.R
+import com.example.periodictableapp.viewholder.ViewHolderOfPeriodicTable
 import com.example.periodictableapp.databinding.PeriodictableItemBinding
+import com.example.periodictableapp.model.ModelPeriodicTable
 
 class AdapterClassOfPeriodicTable(private val modelList: ArrayList<ModelPeriodicTable>) :
     RecyclerView.Adapter<ViewHolderOfPeriodicTable>() {
@@ -19,14 +21,7 @@ class AdapterClassOfPeriodicTable(private val modelList: ArrayList<ModelPeriodic
     }
 
     override fun onBindViewHolder(holder: ViewHolderOfPeriodicTable, position: Int) {
-        Log.e("posiiton", position.toString())
-        if(position==0)
-            holder.bind(modelList[position], modelList[position], modelList[position+1])
-        else if (position >0 && position < modelList.size-1 )
-            holder.bind(modelList[position - 1], modelList[position], modelList[position + 1])
-        else if (position == modelList.size-1)
-            holder.bind(modelList[position - 1], modelList[position], modelList[position])
-
+            holder.bind(modelList[position])
 
 
     }

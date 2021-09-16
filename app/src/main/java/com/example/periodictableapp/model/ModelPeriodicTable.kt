@@ -1,4 +1,4 @@
-package com.example.periodictableapp
+package com.example.periodictableapp.model
 
 data class ModelPeriodicTable (
     val elementNumber: Int,

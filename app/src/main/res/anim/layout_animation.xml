@@ -3,4 +3,6 @@
     android:animation="@anim/item_animation_fall_down"
     android:animationOrder="normal"
     android:columnDelay="15%"
-    android:rowDelay="15%" />
+    android:direction="top_to_bottom|left_to_right"
+    android:rowDelay="15%"
+    android:startOffset="700" />

@@ -36,7 +36,7 @@ class SplachScreenActivity : AppCompatActivity() {
             startActivity(i)
             // close this activity
             finish()
-        }, 3000)
+        }, 1000)
 
 
     }

@@ -4,6 +4,8 @@ import android.app.Dialog
 import android.os.Build
 import android.view.View
 import android.view.Window
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.annotation.RequiresApi
@@ -15,7 +17,7 @@ import com.example.periodictableapp.model.ModelPeriodicTable
 
 class ViewHolderOfPeriodicTable(private val binding: PeriodictableItemBinding) :
     RecyclerView.ViewHolder(binding.root) {
-
+    var topAnimation: Animation?=null
     fun bind(item: ModelPeriodicTable) {
 
         binding.elementnumber = item.elementNumber.toString()
@@ -23,6 +25,7 @@ class ViewHolderOfPeriodicTable(private val binding: PeriodictableItemBinding) :
         binding.elementlongname = item.elementLongName
         binding.materalcard.isVisible = item.isVisible
         binding.linearLayoutItem.setBackgroundResource(item.elementBackgroundColor)
+        topAnimation= AnimationUtils.loadAnimation(binding.linearLayoutItem.context,R.anim.top_animation)
 
         binding.materalcard.setOnClickListener(object : View.OnClickListener {
             @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
@@ -32,6 +35,7 @@ class ViewHolderOfPeriodicTable(private val binding: PeriodictableItemBinding) :
                 }
             }
         })
+        binding.materalcard.animation=topAnimation
     }
 
     private fun showDialog(

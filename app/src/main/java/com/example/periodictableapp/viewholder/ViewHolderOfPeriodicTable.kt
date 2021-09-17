@@ -31,10 +31,7 @@ class ViewHolderOfPeriodicTable(private val binding: PeriodictableItemBinding) :
                     showDialog(item, view)
                 }
             }
-
         })
-
-
     }
 
     private fun showDialog(
@@ -46,22 +43,20 @@ class ViewHolderOfPeriodicTable(private val binding: PeriodictableItemBinding) :
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
         dialog.setCancelable(true)
         dialog.setContentView(R.layout.dialog_layout)
-        dialog.window!!.attributes.windowAnimations= R.style.DialogTheme
+        dialog.window!!.attributes.windowAnimations = R.style.DialogTheme
 
         val elementNumber = dialog.findViewById(R.id.text_elemetNumber) as TextView
         val elementShortName = dialog.findViewById(R.id.text_elemetShortName) as TextView
         val elementLongName = dialog.findViewById(R.id.text_elemetLongName) as TextView
         val elementAtomicWeight = dialog.findViewById(R.id.text_elemetAtomicWeight) as TextView
         val elementElectronConfig = dialog.findViewById(R.id.text_elemetElectronConfig) as TextView
-        val elementBackground=dialog.findViewById<LinearLayout>(R.id.linear_layout_item)
+        val elementBackground = dialog.findViewById<LinearLayout>(R.id.linear_layout_item)
         elementNumber.text = item.elementNumber.toString()
         elementShortName.text = item.elementShortName
         elementLongName.text = item.elementLongName
         elementAtomicWeight.text = item.elementAtomicWeight.toString()
         elementElectronConfig.text = item.elementElectronConfig
         elementBackground.setBackgroundResource(item.elementBackgroundColor)
-
-
 
         dialog.show()
 

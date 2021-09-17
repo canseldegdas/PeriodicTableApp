@@ -6,7 +6,7 @@ import android.appwidget.AppWidgetProvider
 import android.content.Context
 import android.content.Intent
 import android.widget.RemoteViews
-import com.example.periodictableapp.MainActivity
+import com.example.periodictableapp.activities.MainActivity
 import com.example.periodictableapp.R
 
 class PeriodicTableWidgetProvider: AppWidgetProvider() {
